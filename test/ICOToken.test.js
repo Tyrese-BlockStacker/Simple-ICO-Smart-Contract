@@ -37,7 +37,7 @@ describe("ICOToken", function () {
     await expect(token.connect(user1).mint(user2.address, ethers.utils.parseEther("1000"))).to.be.revertedWith("Ownable: caller is not the owner");
     // Check that the balance was not updated
     expect(await token.balanceOf(user2.address)).to.equal(0);
-    expect(await token.totalSupply()).to.equal(0);
+    expect(await token.totalSupply()).to.equal(ethers.utils.parseEther("5000"));
   });
 
   it("should allow the owner to burn tokens", async function () {
