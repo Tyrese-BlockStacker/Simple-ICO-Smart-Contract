@@ -59,8 +59,8 @@ contract ICO {
     function claim() public {
         require(!isICOActive, "ICO: ICO is still active");
         require(totalDeposits >= softCap, "ICO: soft cap not reached");
-        uint256 balance = token.balanceOf(address(this));
-        require(balance > 0, "ICO: no tokens to claim");
+        // uint256 balance = token.balanceOf(address(this));
+        require(deposits[msg.sender] > 0, "ICO: no tokens to claim");
         uint256 amount = (deposits[msg.sender] * rate) / 10 ** 10;
         deposits[msg.sender] = 0;
         token.transfer(msg.sender, amount);
