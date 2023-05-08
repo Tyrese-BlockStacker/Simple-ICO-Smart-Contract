@@ -60,7 +60,7 @@ contract ICO {
         require(!isICOActive, "ICO: ICO is still active");
         require(totalDeposits >= softCap, "ICO: soft cap not reached");
         require(deposits[msg.sender] > 0, "ICO: no tokens to claim");
-        uint256 amount = deposits[msg.sender] / 1e18 / rate;
+        uint256 amount = deposits[msg.sender] / rate;
         deposits[msg.sender] = 0;
         token.transfer(msg.sender, amount);
     }
