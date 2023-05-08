@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AppBar, IconButton, Button, Container, Grid, Box, TextField, LinearProgress, Typography, linearProgressClasses, CircularProgress } from '@mui/material';
 import { orange } from '@mui/material/colors';
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import WalletIcon from '@mui/icons-material/Wallet';
 import PropTypes from 'prop-types';
 import './style.scss';
 
@@ -19,7 +19,7 @@ const darkTheme = createTheme({
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 20,
-    borderRadius: 5,
+    borderRadius: 10,
     [`&.${linearProgressClasses.colorPrimary}`]: {
         backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
     },
@@ -34,7 +34,7 @@ const displayTime = () => {
     let now = new Date();
     let years = now.getFullYear();
     let months = now.getMonth() + 1;
-    let days = now.getDay();
+    let days = now.getDate();
     let dateString = years + '/' + months + '/' + days;
     let hours = now.getHours();
     let minutes = now.getMinutes();
@@ -108,9 +108,10 @@ const Initialco = () => {
     }
     return (
         <div>
+            <ThemeProvider theme={darkTheme}>
             <Grid container>
                 <Grid xs={12}>
-                    <AppBar position="static" color="inherit" className='header' title="Smart Contract">Smart Contract
+                    <AppBar position="static" className='header' title="Smart Contract">Smart Contract
                     </AppBar>
                 </Grid>
                 <Grid xs={7}>
@@ -118,17 +119,16 @@ const Initialco = () => {
                     <span id='time'></span>
                 </Grid>
                 <Grid xs={5}>
-                    <Button secondary color="success" id="connect-button" > <AddShoppingCartIcon />  Wallet Connect</Button>
+                    <Button secondary color="success" id="connect-button" > <WalletIcon />  Wallet Connect</Button>
                 </Grid>
             </Grid>
             <Container >
                 <Box sx={{
                     border: '1px solid gray',
-                    boxShadow: ' 10px 10px 10px #fff, 10px 10px 0 gray',
                     borderRadius: '5px',
                     paddingTop:"3%",
                     paddingBottom:'5%',
-                    marginTop:"5%"
+                    marginTop:"10%"
                     
                 }}>
                     <Grid container >
@@ -136,9 +136,9 @@ const Initialco = () => {
                             <div style={{ padding: '5%' }}>
                                 <TextField
                                     id="outlined-number"
-                                    label="Deposited Amount Number"
+                                    label="Deposit Amount"
                                     type="number"
-                                    color="info"
+
                                     InputLabelProps={{
                                         shrink: true,
                                     }}
@@ -146,7 +146,7 @@ const Initialco = () => {
                                 /></div>
                         </Grid>
                         <Grid xs={2}>
-                            <div className='description'>total amount: {<span style={{ fontWeight: 700, fontSize: '18pt' }}>{amount}</span>}</div>
+                            <div className='description'>Total Deposit: {<span style={{ fontWeight: 700, fontSize: '18pt' }}>{amount}</span>}</div>
                         </Grid>
                         <Grid xs={5}></Grid>
                         <Grid xs={2}>
@@ -176,6 +176,7 @@ const Initialco = () => {
 
                 </Box>
             </Container>
+            </ThemeProvider>
         </div >
 
 
