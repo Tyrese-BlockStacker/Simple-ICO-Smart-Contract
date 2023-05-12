@@ -1,60 +1,36 @@
 {
-  "name": "tyrese_ico-smart-contract",
+  "name": "hardhat-boilerplate",
   "version": "1.0.0",
-  "description": "This is a Solidity project that implements a simple ERC20 token.",
-  "main": "index.js",
+  "description": "A boilerplate repository to get you started with Hardhat and Ethereum development",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "compile": "npx hardhat compile",
-    "test": "npx hardhat test",
-    "deploy": "npx hardhat run scripts/deploy.js --network testnet",
-    "deploy:ropsten": "npx hardhat run scripts/deploy_ropsten.js --network ropsten"
+    "test": "hardhat test"
   },
-  "author": "Tyrese",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NomicFoundation/hardhat-boilerplate.git"
+  },
+  "author": "Nomic Foundation",
   "license": "MIT",
-  "dependencies": {
-    "@emotion/react": "^11.10.8",
-    "@emotion/styled": "^11.10.8",
-    "@fontsource/roboto": "^4.5.8",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.12.3",
-    "@mui/styled-engine-sc": "^5.12.0",
-    "@mui/x-date-pickers": "^6.3.1",
-    "@nomiclabs/hardhat-waffle": "^2.0.1",
-    "@openzeppelin/contracts": "^4.3.2",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "chai": "^4.3.4",
-    "dotenv": "^10.0.0",
-    "ethers": "^5.4.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.62.1",
-    "styled-components": "^5.3.10",
-    "web-vitals": "^2.1.4"
+  "bugs": {
+    "url": "https://github.com/NomicFoundation/hardhat-boilerplate/issues"
   },
+  "homepage": "https://github.com/NomicFoundation/hardhat-boilerplate#readme",
   "devDependencies": {
-    "hardhat": "^2.6.4"
+    "@ethersproject/abi": "^5.7.0",
+    "@ethersproject/providers": "^5.7.2",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.7",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.4",
+    "chai": "^4.3.7",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.12.5",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.2"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.3",
+    "moment": "^2.29.4"
   }
 }

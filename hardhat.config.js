@@ -1,24 +1,11 @@
-require('@nomiclabs/hardhat-waffle');
-require('dotenv').config();
+require("@nomicfoundation/hardhat-toolbox");
 
+// The next line is part of the sample project, you don't need it in your
+// project. It imports a Hardhat task definition, that can be used for
+// testing the frontend.
+require("./tasks/faucet");
+
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-    networks: {
-        hardhat: {},
-        testnet: {
-            url: 'https://data-seed-prebsc-1-s1.binance.org:8545',
-            chainId: 97,
-            gasPrice: 20000000000,
-            accounts: [process.env.PRIVATE_KEY],
-        },
-        ropsten: {
-            url: `https://ropsten.infura.io/v3/${process.env.INFURA_PROJECT_ID}`,
-            accounts: {
-                mnemonic: process.env.METAMASK_MNEMONIC,
-            },
-        },
-      
-    },
-    solidity: {
-        version: '0.8.4',
-    },
+  solidity: "0.8.17",
 };
