@@ -1,4 +1,4 @@
-# Tyrese's First Solidity Project
+# Tyrese Song's First Solidity Project
 
 This is a Solidity project that implements a simple ERC20 token.
 
