@@ -7,14 +7,14 @@ This is a Solidity project that implements a simple ERC20 token.
 1. Clone the repository:
 
 ```
-git clone https://github.com/your-username/my-solidity-project.git
+git clone https://github.com/TyreseSong/ICO-Smart-Contract.git
 ```
 
 
 2. Install the dependencies:
 
 ```
-cd my-solidity-project
+cd ICO-Smart-Contract
 npm install
 ```
 
